@@ -17,10 +17,9 @@ int main() {
     const char *message = "Data from parent";
     char buffer[50];
 
-    // Create a pipe
+    
     pipe(pipefd);
 
-    // Fork a new process
     pid = fork();
 
     if (pid < 0) {
@@ -30,15 +29,15 @@ int main() {
 
     if (pid == 0) {
         // Child process
-        close(pipefd[1]); // Close the write end of the pipe
-        read(pipefd[0], buffer, strlen(message) + 1); // Read from the pipe
+        close(pipefd[1]); 
+        read(pipefd[0], buffer, strlen(message) + 1); 
         printf("Child received: %s\n", buffer);
-        close(pipefd[0]); // Close the read end of the pipe
+        close(pipefd[0]); 
     } else {
-        // Parent process
-        close(pipefd[0]); // Close the read end of the pipe
-        write(pipefd[1], message, strlen(message) + 1); // Write to the pipe
-        close(pipefd[1]); // Close the write end of the pipe
+        
+        close(pipefd[0]); 
+        write(pipefd[1], message, strlen(message) + 1); 
+        close(pipefd[1]);
     }
 
     return 0;
