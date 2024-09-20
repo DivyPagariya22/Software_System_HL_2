@@ -34,7 +34,6 @@ int main() {
         printf("Child received: %s\n", buffer);
         close(pipefd[0]); 
     } else {
-        
         close(pipefd[0]); 
         write(pipefd[1], message, strlen(message) + 1); 
         close(pipefd[1]);
