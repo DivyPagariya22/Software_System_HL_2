@@ -20,17 +20,14 @@ int main() {
     mkfifo(fifo_path, 0666);
 
     int fd = open(fifo_path, O_RDONLY | O_NONBLOCK);
-    if (fd == -1) {
-        perror("open");
-        exit(EXIT_FAILURE);
-    }
+
 
     fd_set readfds;
     FD_ZERO(&readfds);
     FD_SET(fd, &readfds);
 
     struct timeval timeout;
-    timeout.tv_sec = 10;   // Wait for 10 seconds
+    timeout.tv_sec = 10;   
     timeout.tv_usec = 0;
 
     int ret = select(fd + 1, &readfds, NULL, NULL, &timeout);
@@ -38,7 +35,7 @@ int main() {
     if (ret == -1) {
         perror("select");
     } else if (ret == 0) {
-        printf("Timeout occurred! No data within 10 seconds.\n");
+        printf("Timeout occurred!\n");
     } else {
         if (FD_ISSET(fd, &readfds)) {
             char buffer[100];

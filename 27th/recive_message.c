@@ -27,7 +27,7 @@ void receive_message(int msgid, int flag) {
 
     if (result < 0) {
         if (errno == ENOMSG) {
-            printf("No messages available in the queue.\n");
+            printf("No messages in the queue.\n");
         } else {
             perror("Error receiving message");
         }

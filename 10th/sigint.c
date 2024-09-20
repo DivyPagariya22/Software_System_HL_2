@@ -22,7 +22,7 @@ int main() {
     sa.sa_handler = handle_sigint;
     sigaction(SIGINT, &sa, NULL);
 
-    while (1);  // Infinite loop to keep the program running
+    while (1); 
 
     return 0;
 }

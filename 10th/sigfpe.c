@@ -1,6 +1,6 @@
 /*
 ============================================================================
-Name : catch_sigfpe.c
+Name : 10c.c
 Author : Divy Pagariya
 Description : Write a separate program using sigaction system call to catch the following signals.
 c. SIGFPE
@@ -28,8 +28,8 @@ int main() {
 
     int a = 5;
     int b = 0;
-    int c = a / b;  // Intentional divide-by-zero to trigger SIGFPE
-    (void)c;  // Avoid unused variable warning
+    int c = a / b; 
+    (void)c; 
 
     return 0;
 }

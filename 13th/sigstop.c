@@ -24,7 +24,7 @@ int main() {
     printf("Process PID: %d\n", getpid());
     printf("Waiting to catch SIGSTOP signal...\n");
     while (1) {
-        pause();  // Waiting for signals
+        pause(); 
     }
 
     return 0;

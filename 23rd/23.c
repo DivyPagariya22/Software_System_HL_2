@@ -21,6 +21,5 @@ Date: 19th Sep, 2024.
 int main() {
     printf("Maximum number of open files =>  %ld\n", sysconf(_SC_OPEN_MAX));
     printf("Pipe size is =>  %ld bytes\n", fpathconf(STDIN_FILENO, _PC_PIPE_BUF));
-
     return 0;
 }

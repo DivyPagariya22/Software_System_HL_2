@@ -23,7 +23,7 @@ int main() {
         // Child process: send SIGKILL to the parent process
         printf("Child process is sending SIGKILL to parent process.\n");
         kill(getppid(), SIGKILL);
-        sleep(5);  // Give time to observe the orphaned process
+        sleep(5);
         printf("Child process is now an orphan (adopted by init).\n");
     } else {
         printf("Fork failed!\n");

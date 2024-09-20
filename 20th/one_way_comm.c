@@ -21,7 +21,7 @@ int main() {
         char message[20];
         sprintf(message, "Helllooo =  %d", i + 1);
         write(fd, message, sizeof(message));
-        sleep(1); // Sleep for a second before sending the next message
+        sleep(1);
     }
     close(fd);
     return 0;
